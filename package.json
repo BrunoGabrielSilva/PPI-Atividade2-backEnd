@@ -1,0 +1,28 @@
+{
+  "name": "ppi-atividade2-backend",
+  "version": "1.0.0",
+  "description": "BackEnd - Atividade 2 - Gestão pacotes de viagens",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoGabrielSilva/PPI-Atividade2-backEnd.git"
+  },
+  "keywords": [
+    "API",
+    "Backend",
+    "MVC",
+    "REST",
+    "RESTFUL"
+  ],
+  "author": "Bruno Gabriel da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoGabrielSilva/PPI-Atividade2-backEnd/issues"
+  },
+  "homepage": "https://github.com/BrunoGabrielSilva/PPI-Atividade2-backEnd#readme"
+}
