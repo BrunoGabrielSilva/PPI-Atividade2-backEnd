@@ -103,18 +103,16 @@ export default class PacoteDB {
     }
 
     async buscarTodos() {
-        const conexao = await conectar(); // Obtém conexão com o banco
+        const conexao = await conectar(); 
         try {
-            const sql = `SELECT * FROM pacoteviagem ORDER BY id`; // Consulta SQL
-            const [linhas] = await conexao.execute(sql); // Executa a consulta e obtém os resultados
+            const sql = `SELECT * FROM pacoteviagem ORDER BY id`;
+            const [linhas] = await conexao.execute(sql); 
     
-            // Verifica se há resultados na consulta
             if (!linhas || linhas.length === 0) {
                 console.log('Nenhum pacote encontrado no banco de dados.');
-                return []; // Retorna um array vazio
+                return [];
             }
     
-            // Inicializa um array para armazenar os pacotes
             const pacotes = [];
             for (const linha of linhas) {
                 const pacote = new PacoteViagem(
@@ -123,18 +121,17 @@ export default class PacoteDB {
                     linha.preco,
                     linha.descricao
                 );
-                pacote.id = linha.id; // Define o ID do pacote
-                pacotes.push(pacote); // Adiciona o pacote ao array
+                pacote.id = linha.id;
+                pacotes.push(pacote);
             }
     
-            // Retorna o array com os pacotes encontrados
             return pacotes;
         } catch (error) {
             console.error('Erro ao buscar todos os pacotes:', error);
-            throw error; // Propaga o erro para o chamador
+            throw error;
         } finally {
             if (conexao.release) {
-                conexao.release(); // Libera a conexão de volta ao pool
+                conexao.release();
             }
         }
     }
